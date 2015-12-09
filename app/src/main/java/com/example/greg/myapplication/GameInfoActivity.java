@@ -5,10 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +22,8 @@ import java.util.ArrayList;
  */
 public class GameInfoActivity extends Activity {
     private ArrayList<String> list;
+    private ArrayList<Integer> jobs;
+    private AlertDialog ad;
     private static ArrayList<Character> characterList;
     private static String currentGameName;
     private Context context;
@@ -34,8 +33,9 @@ public class GameInfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_info_layout);
 
-        list = new ArrayList<String>();
+        list = new ArrayList<>();
         characterList = new ArrayList<>();
+        jobs = new ArrayList<>();
 
         //Set the title of the activity to the name of the game that was selected
         currentGameName = GameArrayAdapter.currentGameName;
@@ -50,14 +50,6 @@ public class GameInfoActivity extends Activity {
                 addCharacterClickHandler();
             }
         });
-
-//        Button addAnotherJobButton = (Button) findViewById(R.id.addAnotherJobButton);
-//        addAnotherJobButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                addAnotherJobClickHandler();
-//            }
-//        });
     }
 
 
@@ -65,7 +57,7 @@ public class GameInfoActivity extends Activity {
 
     public void addCharacterClickHandler() {
         LayoutInflater factory = LayoutInflater.from(this);
-        final View textEntryView = factory.inflate(R.layout.character_creator, null);
+        final View textEntryView = factory.inflate(R.layout.character_creator_dialog, null);
 
         final EditText name = (EditText) textEntryView.findViewById(R.id.nameEditText);
         final EditText characterLevel = (EditText) textEntryView.findViewById(R.id.levelEditText);
@@ -104,7 +96,7 @@ public class GameInfoActivity extends Activity {
         });
 
         //display character creator dialog box
-         new AlertDialog.Builder(this)
+         ad = new AlertDialog.Builder(this)
                  .setTitle("Add Character")
                  .setMessage("Create Character Info")
                  .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
@@ -142,11 +134,26 @@ public class GameInfoActivity extends Activity {
                  .setIcon(android.R.drawable.ic_dialog_alert)
                  .setView(textEntryView)
                  .show();
+
+        //set button onClick Listener
+        Button addAnotherJobButton = (Button) ad.findViewById(R.id.addAnotherJobButton);
+        addAnotherJobButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addAnotherJobClickHandler();
+            }
+        });
     }
 
 
     public void addAnotherJobClickHandler(){
-
+        //instantiate custom adapter
+//        jobs.add(0, 0);
+//        JobArrayAdapter adapter = new JobArrayAdapter(jobs, ad.getContext());
+//
+//        //handle listview and assign adapter
+//        ListView jobsListView = (ListView)findViewById(R.id.jobsListView);
+//        jobsListView.setAdapter(adapter);
     }
 
 
