@@ -5,12 +5,15 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -37,6 +40,35 @@ public class MainActivity extends Activity {
         list = new ArrayList<String>();
         gameListGames = new ArrayList<>();
 
+        //show dialog box by default each time it runs, unless user chooses to not see it again
+        final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final CheckBox cb = new CheckBox(this);
+        cb.setText("Do not show again");
+
+        //SharedPreferences.Editor edit = preferences.edit();
+        //edit.putBoolean("showDialog", true).commit();
+
+        if(preferences.getBoolean("showDialog", true)){
+            new AlertDialog.Builder(this)
+                    .setTitle("My Game Progress")
+                    .setMessage("Welcome to My Game Progress! Simply select \"Add Game\" to add a new game.")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichbutton) {
+                            if(cb.isChecked()) {
+                                SharedPreferences.Editor edit = preferences.edit();
+                                edit.putBoolean("showDialog", false).commit();
+                            }
+                        }
+                    })
+                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichbutton) {
+                            //do nothing
+                        }
+                    })
+                    .setView(cb)
+                    .show();
+        }
+
         //if no entries in game list, display a message stating that entries need to be added
 //        if(gameListGames.isEmpty()){
 //            ListView gamesListView = (ListView) findViewById(R.id.gamesListView);
@@ -51,6 +83,8 @@ public class MainActivity extends Activity {
         //else {
             displayList();
         //}
+
+
 
         //set button onClick Listener
         setContentView(R.layout.game_list_layout);
