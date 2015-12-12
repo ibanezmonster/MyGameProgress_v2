@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\nick\\Desktop\\new_mygameprogress_v2\\MyGameProgress_v2\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "C:\\AndroidStuff\\MyGameProgress_v2\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "C:\\Users\\nick\\Desktop\\new_mygameprogress_v2\\MyGameProgress_v2\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "file": "C:\\AndroidStuff\\MyGameProgress_v2\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

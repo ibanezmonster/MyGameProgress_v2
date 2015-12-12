@@ -2,6 +2,7 @@ package com.example.greg.myapplication;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -20,4 +21,5 @@ public class CharacterCreatorDialog extends Dialog {
         //EditText edt =
         //layout.addView();
     }
+
 }
