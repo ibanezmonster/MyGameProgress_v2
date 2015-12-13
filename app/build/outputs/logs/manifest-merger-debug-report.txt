@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml:2:1-26:12
+ADDED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml:2:1-27:12
 	xmlns:android
 		ADDED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml:2:11-69
 	package
@@ -14,7 +14,7 @@ ADDED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml:2:
 		INJECTED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml
 		INJECTED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml:5:5-24:19
+ADDED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml:5:5-25:19
 MERGED from [com.android.support:appcompat-v7:23.1.0] C:\AndroidStuff\MyGameProgress_v2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.0] C:\AndroidStuff\MyGameProgress_v2\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
 	android:label
@@ -51,6 +51,10 @@ activity#com.example.greg.myapplication.GameInfoEditActivity
 ADDED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml:23:9-57
 	android:name
 		ADDED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml:23:19-55
+activity#com.example.greg.myapplication.CheckpointInfo
+ADDED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml:24:9-51
+	android:name
+		ADDED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml:24:19-49
 uses-sdk
 INJECTED from C:\AndroidStuff\MyGameProgress_v2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.1.0] C:\AndroidStuff\MyGameProgress_v2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:20:5-43

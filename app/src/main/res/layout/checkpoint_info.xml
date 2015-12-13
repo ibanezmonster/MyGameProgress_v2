@@ -32,7 +32,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/btnAddTask"
-        android:layout_alignEnd="@+id/btnAddTask" />
+        android:layout_alignEnd="@+id/btnAddTask"
+        android:onClick="onClick_DeleteTasks"/>
 
     <ListView
         android:layout_width="wrap_content"

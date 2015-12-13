@@ -21,6 +21,7 @@
 
         <activity android:name=".GameInfoActivity"/>
         <activity android:name=".GameInfoEditActivity"/>
+        <activity android:name=".CheckpointInfo"/>
     </application>
 
 </manifest>

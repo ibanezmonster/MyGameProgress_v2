@@ -25,6 +25,7 @@
         </activity>
         <activity android:name="com.example.greg.myapplication.GameInfoActivity" />
         <activity android:name="com.example.greg.myapplication.GameInfoEditActivity" />
+        <activity android:name="com.example.greg.myapplication.CheckpointInfo" />
     </application>
 
 </manifest>

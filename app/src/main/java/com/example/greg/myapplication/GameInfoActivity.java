@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,7 @@ public class GameInfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_info_layout);
 
+
         list = new ArrayList<>();
         characterList = new ArrayList<>();
         jobs = new ArrayList<>();
@@ -49,7 +51,7 @@ public class GameInfoActivity extends Activity {
             public void onClick(View v) {
                 addCharacterClickHandler();
             }
-        });
+        } );
     }
 
 
@@ -157,7 +159,6 @@ public class GameInfoActivity extends Activity {
     }
 
 
-
     public static ArrayList<Character> getCharacterList() {
         return characterList;
     }
@@ -186,4 +187,6 @@ public class GameInfoActivity extends Activity {
         ListView lView = (ListView)findViewById(R.id.gameInfoListView);
         lView.setAdapter(adapter);
     }
+
+
 }

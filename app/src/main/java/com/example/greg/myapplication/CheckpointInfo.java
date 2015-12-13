@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.format.Time;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -28,6 +29,7 @@ public class CheckpointInfo extends Activity {
         edTask = (EditText) findViewById(R.id.editTask);
         openDB();
         populateListView();
+
     }
 
     private void openDB(){
@@ -53,4 +55,10 @@ public class CheckpointInfo extends Activity {
         ListView myList = (ListView) findViewById(R.id.listViewTasks);
         myList.setAdapter(myCursorAdapter);
     }
+
+    public void onClick_DeleteTasks(View v) {
+        myDb.deleteAll();
+        populateListView();
+    }
+
 }
